@@ -58,6 +58,34 @@
                                         </a>
                                     </li>
                                     {{ end }}
+                                    {{ with .webURL }}
+                                    <li class="list-inline-item">
+                                        <a href="{{.}}">
+                                            <i class="tf-global"></i>
+                                        </a>
+                                    </li>
+                                    {{ end }}
+                                    {{ with .linkedinURL }}
+                                    <li class="list-inline-item">
+                                        <a href="{{.}}">
+                                            <i class="tf-ion-social-linkedin"></i>
+                                        </a>
+                                    </li>
+                                    {{ end }}
+                                    {{ with .xingURL }}
+                                    <li class="list-inline-item">
+                                        <a href="{{.}}">
+                                            <i class="tf-ion-social-dribbble"></i>
+                                        </a>
+                                    </li>
+                                    {{ end }}
+                                    {{ with .emailURL }}
+                                    <li class="list-inline-item">
+                                        <a href="{{.}}">
+                                            <i class="tf-ion-email"></i>
+                                        </a>
+                                    </li>
+                                    {{ end }}
                                 </ul>
                             </div>
                         </div>
