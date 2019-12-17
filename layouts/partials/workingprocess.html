@@ -22,7 +22,7 @@
             </div>
             <div class="row justify-content-center">
                 {{ range $index,  $element:= .item }}
-                    <div class="col-md-4 col-sm-6 p-0">
+                    <div class="col-md-6 col-sm-6 p-0">
                         <div class="service-item text-center">
                             {{ with .number }}
                                 <span class="count">{{ . }}.</span>
@@ -34,7 +34,7 @@
                                 <h4>{{ . }}</h4>
                             {{ end }}
                             {{ with .description }}
-                                <p>{{ . }}</p>
+                                <p style="text-align: justify;  text-justify: inter-word; padding-right: 10px; padding-left: 10px;">{{ . }}</p>
                             {{ end }}
                         </div>
                     </div>

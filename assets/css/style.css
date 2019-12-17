@@ -832,6 +832,19 @@ a:focus, a:hover {
   margin-bottom: 10px;
 }
 
+
+/*=================================================================
+ slider
+==================================================================*/
+
+.slider-thumb {
+
+    display: inline-block;
+    border-radius: 0% !important;
+    width: 90px;
+    height: auto;
+  }
+
 /*=================================================================
  Call To Action 1
 ==================================================================*/
@@ -1059,11 +1072,13 @@ a:focus, a:hover {
 
 .pricing-table .pricing-item ul {
   padding: 20px 0 10px;
+  min-height: 300px;
 }
 
 .pricing-table .pricing-item li {
   font-weight: 400;
-  padding: 10px 0;
+  font-size: 16px;
+  padding: 8px 0;
   color: #666;
 }
 
@@ -1079,7 +1094,7 @@ a:focus, a:hover {
   color: #fff;
 }
 
-.pricing-table .price-title > h3 {
+.pricing-table .price-title > h6 {
   color: #fff;
   font-weight: 700;
   margin: 0 0 5px;
@@ -1098,8 +1113,10 @@ a:focus, a:hover {
 }
 
 .pricing-table .price-title .value {
-  font-size: 50px;
+  font-size: 24px;
   padding: 10px 0;
+  line-height: 1.8;
+  color:#e91e63;
 }
 
 /*=================================================================
@@ -1268,6 +1285,7 @@ a:focus, a:hover {
   background: #fff;
   border: 1px solid #eee;
   padding: 50px 20px;
+  min-height: 380px;
   margin-right: -1px;
   margin-bottom: -1px;
   transition: all 0.3s ease 0s;
