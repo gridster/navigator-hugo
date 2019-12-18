@@ -65,7 +65,7 @@ a:focus, a:hover {
   padding: 10px 40px;
   text-transform: uppercase;
   border: 1px solid transparent;
-  border-radius: 20px;
+  border-radius: 2px;
 }
 
 .btn-main:hover, .btn-main-sm:hover {
@@ -373,10 +373,8 @@ a:focus, a:hover {
   }
   h4{
     font-size: 8px;
-    line-height: 8px;
     font-weight: 600;
     letter-spacing: 2.0px;
-    text-transform: uppercase;
   }
   .title h2 {
     font-size: 1.1rem;
@@ -384,6 +382,17 @@ a:focus, a:hover {
   .member-photo img {
     max-width: 80%;
     padding: 15px;
+  }
+  .testimonial .item .client-meta h4 {
+  font-size: 12px !important;
+  line-height: 15px !important;
+  margin-bottom: 4px;
+  }
+  .slick-prev{
+    left: 0px !important;
+  }
+  .slick-next{
+    right: 5px !important;
   }
 }
 
@@ -403,10 +412,7 @@ a:focus, a:hover {
   }
   h4{
     font-size: 10px;
-    line-height: 9px;
-    font-weight: 700;
     letter-spacing: 2.7px;
-    text-transform: uppercase;
   }
   .title h2 {
     font-size: 1.2rem;
@@ -416,6 +422,9 @@ a:focus, a:hover {
   }
   .section {
     padding: 60px 0;
+  }
+  .service-2 .service-item .count {
+    font-size: 50px !important;
   }
 }
 
@@ -435,14 +444,14 @@ a:focus, a:hover {
     font-size: 1.0em;
   }
   h4{
-    font-size: 10px;
-    line-height: 9px;
-    font-weight: 700;
     letter-spacing: 2.7px;
-    text-transform: uppercase;
   }
   .title h2 {
     font-size: 1.2rem;
+  }
+  .hero-area .block h2 {
+    font-size: 34px !important;
+    margin-bottom: 20px;
   }
   .pricing-table .price-title .value {
     font-size: 20px !important;
@@ -468,8 +477,6 @@ a:focus, a:hover {
   }
   h4{
     font-size: 12px;
-    line-height: 10px;
-    font-weight: 700;
     letter-spacing: 3.3px;
     text-transform: uppercase;
   }
@@ -481,6 +488,9 @@ a:focus, a:hover {
   }
   .pricing-table .pricing-item ul {
     min-height: 450px;
+  }
+  .service-2 .service-item h4{
+    font-size: 15px;
   }
 }
 
@@ -649,9 +659,7 @@ a:focus, a:hover {
 }
 
 .navigation .dropdown .dropdown-item {
-  padding: 8px 15px;
   color: #fff;
-  font-size: 13px;
 }
 
 .navigation .dropdown .dropdown-item:hover {
@@ -970,6 +978,7 @@ a:focus, a:hover {
   padding: 100px 0;
   background-size: cover;
   color: #fff;
+  background-position: 40%;
 }
 
 .call-to-action h2 {
@@ -1713,6 +1722,7 @@ a:focus, a:hover {
 .post-item .post-content p {
   color: #757575;
   margin: 10px 0;
+  min-height: 120px;
 }
 
 .post-item .btn-main, .post-item .btn-main-sm {

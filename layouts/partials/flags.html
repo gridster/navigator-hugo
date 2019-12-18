@@ -5,8 +5,8 @@
 {{ $icone_url := delimit (slice $icone_base_url .liste.code $icone_end_url) "" }}
 <!-- TODO : Faire un style adapté aux drapeaux/langue + highligh l'actuel -->
 {{ if eq (string .liste.code) (string .site.Language) }}
-    <a href="{{ .liste.code | absURL }}" class="selected"><img src= {{ $icone_url | absURL }} alt="{{ .liste.code }}" style="width: 25px; height: 25px;" />
+    <a href="{{ .liste.code | absURL }}" class="selected"><img src= {{ $icone_url | absURL }} alt="{{ .liste.code }}" style="width: 25px; height: 25px; visibility: hidden !important;" />
     {{ else }}
-    <a href="{{ .liste.code | absURL }}"><img src= {{ $icone_url | absURL }} alt="{{ .liste.code }}" style="width: 25px; height: 25px;" />
+    <a href="{{ .liste.code | absURL }}"><img src= {{ $icone_url | absURL }} alt="{{ .liste.code }}" style="width: 25px; height: 25px; visibility: hidden !important;" />
 {{ end }}
 </a>

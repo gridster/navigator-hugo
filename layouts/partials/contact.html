@@ -21,35 +21,44 @@
             </div>
             {{ "<!-- Contact Form -->" | safeHTML }}
             <div class="contact-form col-12 col-md-6 ">
-                <form id="contact-form" method="post" action="sendmail.php" role="form">
+                
+                <form id="my-form" action="https://formspree.io/mgeveryy" method="POST" role="form">
                     <div class="form-group">
-                        <input type="text" placeholder="Your Name" class="form-control" name="name" id="name">
-                    </div>
-
-                    <div class="form-group">
-                        <input type="email" placeholder="Your Email" class="form-control" name="email" id="email">
+                        <input type="text" required="true" placeholder="Name / Firmenname" class="form-control" name="name" id="name">
                     </div>
 
                     <div class="form-group">
-                        <input type="text" placeholder="Subject" class="form-control" name="subject" id="subject">
+                        <input type="email" required="true" placeholder="E-Mail" class="form-control" name="email" id="email">
                     </div>
 
                     <div class="form-group">
-                        <textarea rows="6" placeholder="Message" class="form-control" name="message" id="message"></textarea>
+                        <input type="text" placeholder="Betreff" class="form-control" name="subject" id="subject">
+                        <input type="hidden" name="channel" value="PM_main">
                     </div>
 
-                    <div id="mail-success" class="success">
-                        Vielen Danke für Ihre Anfrage. Wir antworten Ihnen schnellstmöglich :)
+                    <div class="form-group">
+                        <textarea rows="6" required="true" placeholder="Ihre Nachricht" class="form-control" name="message" id="message"></textarea>
                     </div>
 
-                    <div id="mail-fail" class="error">
-                        Hier ist etwas schiefgelaufen, bitte versuchen Sie es später erneut :(
-                    </div>
+                     <div class="form-group row">
+                        <label class="form-check-label ml-3">
+                          <input class="form-check-input" name="optin" required type="checkbox">
+                          <p>Ich stimme der Verarbeitung meiner Daten zu.</p>
+                        </label>
+                      </div>
+                      <div class="form-group row">
+                        <label class="form-check-label ml-3">
+                          <input class="form-check-input" name="newsletter" type="checkbox">
+                          <p>Ich möchte in Zukunft gerne über Neuigkeiten informiert werden. / Newsletter bestellen.</p>
+                        </label>
+                      </div>
 
-                    <div id="cf-submit">
-                        <input type="submit" id="contact-submit" class="btn btn-transparent" value="Submit">
+                    <div id="cf-submit" style="align-content: center">
+                        <button type="submit" id="my-form-button" class="btn btn-main" style="min-width: 100%; text-align: center;">Senden</button>
                     </div>
+                    <h5 id="my-form-status" style="text-align: center; margin-top: 15px; color: #000;"></h5>
                 </form>
+
             </div>
             <div class="col-12 col-md-3">
             

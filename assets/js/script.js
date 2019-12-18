@@ -15,20 +15,24 @@
 		});
 	});
 	
-	
-	
-	
+
 	/* ========================================================================= */
 	/*	Portfolio Filtering Hook
 	/* =========================================================================  */
+	
+	//NOTE SB - ACTIVATE IF VIDEO
+	/*
 	$('.play-icon i').click(function () {
 		var video = '<iframe allowfullscreen src="' + $(this).attr('data-video') + '"></iframe>';
-		$(this).replaceWith(video);
+		if(video){
+			$(this).replaceWith(video);
+		}
 	});
-	
+	*/
 	/* ========================================================================= */
 	/*	Portfolio Filtering Hook
 	/* =========================================================================  */
+
 	setTimeout(function () {
 		var filterizd = $('.filtr-container').filterizr({});
 		//Active changer
@@ -83,8 +87,6 @@
 	});
 	
 	
-	
-	
 	/* ========================================================================= */
 	/*	Company Slider Carousel
 	/* =========================================================================  */
@@ -126,14 +128,12 @@
 	});
 	
 	
-	
-	
 	/* ========================================================================= */
 	/*   Contact Form Validating
 	/* ========================================================================= */
+
 	
-	
-	$('#contact-submit').click(function (e) {
+	$('#my-form-button').click(function (e) {
 	
 		//stop the form from being submitted
 		e.preventDefault();
@@ -216,8 +216,9 @@
 	
 	
 	
-	window.marker = null;
+	//window.marker = null;
 	
+	/*
 	function initialize() {
 	var map;
 	
@@ -288,3 +289,4 @@
 	if (map.length != 0) {
 	google.maps.event.addDomListener(window, 'load', initialize);
 	}
+	*/

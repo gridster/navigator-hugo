@@ -82,7 +82,56 @@
 <script src="{{ "plugins/filterzr/jquery.filterizr.min.js" | absURL }}"></script>
 {{ "<!-- Smooth Scroll js -->" | safeHTML }}
 <script src="{{ "plugins/smooth-scroll/dist/js/smooth-scroll.min.js" | absURL }}"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
+<script>
+   if(document.getElementById("my-form")){ 
+      window.addEventListener("DOMContentLoaded", function() {
+
+        // get the form elements defined in your form HTML above  
+        var form = document.getElementById("my-form");
+        var button = document.getElementById("my-form-button");
+        var status = document.getElementById("my-form-status");
+
+        // Success and Error functions for after the form is submitted    
+        function success() {
+          form.reset();
+          button.style = "display: none ";
+          status.innerHTML = "Vielen Dank für Ihre Nachricht!";
+        }
+
+        function error() {
+          status.innerHTML = "Oops! Da ist etwas schiefgelaufen.";
+        }
+
+        // handle the form submission event
+        form.addEventListener("submit", function(ev) {
+          ev.preventDefault();
+
+          button.innerHTML="Sende...";
+          var data = new FormData(form);
+          ajax(form.method, form.action, data, success, error);
+          
+        });
+      });
+  }
+  
+  // helper function for sending an AJAX request
+  function ajax(method, url, data, success, error) {
+    var xhr = new XMLHttpRequest();
+    xhr.open(method, url);
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState !== XMLHttpRequest.DONE) return;
+      if (xhr.status === 200) {
+        success(xhr.response, xhr.responseType);
+      } else {
+        error(xhr.status, xhr.response, xhr.responseType);
+      }
+    };
+    xhr.send(data);
+  }
+</script>
+
+
 {{ "<!-- Main Script -->" | safeHTML }}
 {{ $script := resources.Get "js/script.js" | minify}}
 <script src="{{ $script.Permalink }}"></script>
