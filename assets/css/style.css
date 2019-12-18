@@ -1285,7 +1285,7 @@ a:focus, a:hover {
   background: #fff;
   border: 1px solid #eee;
   padding: 50px 20px;
-  min-height: 380px;
+  min-height: 300px;
   margin-right: -1px;
   margin-bottom: -1px;
   transition: all 0.3s ease 0s;
@@ -1512,7 +1512,7 @@ a:focus, a:hover {
 }
 
 .testimonial .item i {
-  font-size: 40px;
+  font-size: 30px;
   color: #fff;
   margin-bottom: 30px;
   display: inline-block;
@@ -1523,8 +1523,10 @@ a:focus, a:hover {
 }
 
 .testimonial .item .client-details p {
-  font-size: 17px;
-  color: #fff;
+  font-size: 15px;
+  text-align: justify;
+  text-justify: inter-word;
+  color: #F7F7F7;
   font-weight: 200;
   padding: 0 10%;
 }
@@ -1535,6 +1537,7 @@ a:focus, a:hover {
 }
 
 .testimonial .item .client-meta h4 {
+  font-size: 18px;
   margin-bottom: 4px;
 }
 
@@ -1544,8 +1547,8 @@ a:focus, a:hover {
 
 .testimonial .item .client-thumb img {
   display: inline-block;
-  border-radius: 100%;
-  width: 90px;
+  border-radius: 0%;
+  width: 70px;
   height: auto;
 }
 
