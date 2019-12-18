@@ -47,14 +47,14 @@
 		slidesToShow: 2,
 		slidesToScroll: 1,
 		infinite: true,
-		arrows: false,
+		arrows: true,
 		autoplay: true,
-		autoplaySpeed: 2000,
+		autoplaySpeed: 3000,
 		responsive: [{
 				breakpoint: 600,
 				settings: {
 					slidesToShow: 1,
-					slidesToScroll: 2
+					slidesToScroll: 1
 				}
 			},
 			{
