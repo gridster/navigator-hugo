@@ -12,7 +12,7 @@
                             <div class="text-center">
                                 <div class="col-10 col-md-10 col-sm-12 text-center">
                                    {{ if .url }}
-                                    <a href="{{ .url }}" alt="Porfolio infos" target="_self">
+                                    <a href="{{ .url | absURL}}" alt="Porfolio infos" target="_self">
                                     {{ end }}
                                     <img src="{{ .image | absURL }}" class="img-fluid rounded" style="padding: 10px;" alt="about-image">
                                     {{ if .url }}</a>
