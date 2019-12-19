@@ -133,7 +133,7 @@
 	/* ========================================================================= */
 
 	
-	$('#my-form-button').click(function (e) {
+	$('#peterle').click(function (e) {
 	
 		//stop the form from being submitted
 		e.preventDefault();
