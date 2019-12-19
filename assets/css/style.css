@@ -40,6 +40,7 @@ figure {
 
 a {
   transition: all .3s ease-in 0s;
+  color:#e91e63;
 }
 
 iframe {
@@ -425,6 +426,9 @@ a:focus, a:hover {
   }
   .service-2 .service-item .count {
     font-size: 50px !important;
+  }
+  .post-item .post-content {
+    min-height: 70px;
   }
 }
 
@@ -1722,7 +1726,7 @@ a:focus, a:hover {
 .post-item .post-content p {
   color: #757575;
   margin: 10px 0;
-  min-height: 120px;
+  min-height: 160px;
 }
 
 .post-item .btn-main, .post-item .btn-main-sm {
@@ -1730,6 +1734,10 @@ a:focus, a:hover {
   margin-top: 10px;
   padding: 8px 20px;
   margin: 15px 0;
+}
+
+.post-item .post-more {
+  
 }
 
 /*=================================================================

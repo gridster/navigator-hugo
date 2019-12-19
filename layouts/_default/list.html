@@ -33,7 +33,9 @@
                     <div class="post-content">
                         <p>{{ .Summary }}</p>
                     </div>
-                    <a class="btn btn-main" href="{{ .Permalink }}">{{ i18n "readmore" }}</a>
+                    <div class="post-more">
+                      <a class="btn btn-main" href="{{ .Permalink }}">{{ i18n "readmore" }}</a>
+                    </div>
                 </div>
             </article>
             {{ "<!-- /single blog post -->" | safeHTML }}
