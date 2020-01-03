@@ -2,21 +2,41 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ .Site.Title }}</title>
+
 {{ with .Site.Params.author }} <meta name="author" content="{{ . }}">{{ end }}
 {{ hugo.Generator }}
 
+{{ $keywords := .Site.Params.defaultKeywords | default (slice "" | first 0) }}
+  {{ if isset .Params "tags" }}{{ range .Params.tags }}{{ $keywords = $keywords | append . }}{{ end }}{{ end }}
+  {{ if isset .Params "keywords" }}{{ range .Params.keywords }}{{ $keywords = $keywords | append . }}{{ end }}{{ end }}
+  {{ if gt (len $keywords) 0 }}
+  <meta name="keywords" content="{{ delimit (uniq $keywords) ", " }}">
+  {{ end }}
+  {{ $description_plain := default .Site.Params.defaultDescription .Description | default | markdownify | plainify }}
+  <meta name="description" content="{{ $description_plain }}">
+  <meta name=twitter:description content="{{ $description_plain }}">
+
 {{ "<!-- Mobile Specific Meta -->" | safeHTML }}
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>{{ .Site.Title }}</title>
-
-<meta name=description content="productMonkey ~ conceptMonkey | Product & Innovation Services Sebastian Benderoth - Produkt Management und Digitalberatung in 53804 Much, nahe Köln ... Themen: ✔ Digitale Geschäftsmodelle, ✔ SaaS Produktstrategie, ✔ Innovation, ✔ Technologie-Beratung, ... ➨ Mehr erfahren"><meta name=keywords content="produkt management, Product Design, IT Beratung, Digitalberatung, Innovation, Digitale Strategie, Webentwicklung, Website, Much, Eckhausen, 53804, Rhein-Sieg, Overath, Handwerk Digital" property=keywords><meta name=canonical content=http://www.productmonkey.de/ property=canonical><meta name=og:title content="productMonkey | Sebastian Benderoth | conceptMonkey Product Services" property=og:title><meta name=og:description content="productMonkey ~ conceptMonkey | Product & Innovation Services Sebastian Benderoth - Produkt Management und Digitalberatung in 53804 Much, nahe Köln ... Themen: ✔ Digitale Geschäftsmodelle, ✔ SaaS Produktstrategie, ✔ Innovation, ✔ Technologie-Beratung, ... ➨ Mehr erfahren" property=og:description><meta property=og:site_name content=productMonkey.de><meta property=og:type content=website><meta property=og:url content=https://www.productmonkey.de><meta name=twitter:title content="conceptMonkey - Product & Innovation Services"><meta name=twitter:card content=summary_large_image><meta name=twitter:image content=https://www.productmonkey.de/images/conceptMonkey_icon.png><meta name=twitter:description content="conceptMonkey | Sebastian Benderoth - Digitalberatung, Produkt Management, Innvoation und Webentwicklung in Much, Overath und Umgebung ... Themen: ✔ Digitale Geschäftsmodelle, ✔ SaaS Produkte, ✔ Innovation, ✔ Webapplikationen, ... ➨ Mehr erfahren"><meta name=author content="conceptMonkey | Sebastian Benderoth"><meta name=robots content=index,nofollow><meta name=robots content=max-video-preview:[30]><meta name=robots content=max-snippet:[120]><meta name=robots content=max-image-preview:[large]>
-
-
-
+<meta name=canonical content=http://www.productmonkey.de/ property=canonical>
+<meta property="og:locale" content="de">
+<meta property=og:site_name content=productMonkey.de>
+<meta property=og:type content=website>
+<meta property=og:url content=https://www.productmonkey.de>
+<meta name=og:title content="{{ .Site.Title }}" property=og:title>
+<meta name=og:description content="{{ $description_plain }}" property=og:description>
+<meta name=twitter:title content="{{ .Site.Title }}">
+<meta name=twitter:card content=summary_large_image>
+<meta name=twitter:image content=https://www.productmonkey.de/images/conceptMonkey_icon.png>
+<meta name=author content="conceptMonkey | Sebastian Benderoth">
+<meta name=robots content=index,nofollow><meta name=robots content=max-video-preview:[30]>
+<meta name=robots content=max-snippet:[140]><meta name=robots content=max-image-preview:[large]>
 
 {{ "<!-- Favicon -->" | safeHTML }}
 <link rel="shortcut icon" type="image/x-icon" href="{{ "images/favicon.ico" | absURL }}" />
+<!-- Favicon and Apple touch icons-->
+<link rel="apple-touch-icon" href="{{ "images/icons/apple-touch-icon.png" | relURL }}" />
 
 {{"<!-- Stylesheets -->" | safeHTML}}
 {{ "<!-- Themefisher Icon font -->" | safeHTML }}
@@ -29,25 +49,8 @@
 <link rel="stylesheet" href="{{ "plugins/slick-carousel/slick/slick.css" | absURL }}">
 <link rel="stylesheet" href="{{ "plugins/slick-carousel/slick/slick-theme.css" | absURL }}">
 {{ "<!-- Main Stylesheet -->" | safeHTML }}
-
 {{ $styles := resources.Get "css/style.css" | minify}}
 <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
 <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="bcb9bf47-3ce9-42e5-8a84-e45dfcc95b4f" data-blockingmode="auto" type="text/javascript"></script>
-
-<!-- Matomo -->
-<script type="text/javascript">
-  var _paq = window._paq || [];
-  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u="//analytics.conceptmonkey.de/";
-    _paq.push(['setTrackerUrl', u+'matomo.php']);
-    _paq.push(['setSiteId', '5']);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-  })();
-</script>
-<!-- End Matomo Code -->
 
 </head>
