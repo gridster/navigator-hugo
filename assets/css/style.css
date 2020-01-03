@@ -34,8 +34,33 @@ ol, ul {
   list-style: none;
 }
 
+.blog-list {
+  margin-left: 20px;
+  margin-bottom: 20px;
+  list-style: square !important;
+}
+
+.blog-list li {
+  font-family: "Nunito", sans-serif;
+  color: #9a9a9a;
+  font-size: 16px;
+}
+
 figure {
-  margin: 0;
+    display: table;  /* ADD Me */
+    margin: 0 auto;  /* ADD Me */
+}
+
+figcaption {
+/*    float: right;  /* Delete Me */
+    font-size: 10px !important;
+    margin: 10px 0;  /* ADD Me */
+    text-align: right;   /* ADD Me */
+}
+
+figure img {
+    display: inline !important;
+    margin: 0 !important;
 }
 
 a {
