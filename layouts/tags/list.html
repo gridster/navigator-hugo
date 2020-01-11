@@ -1,0 +1,148 @@
+{{ define "main" }}
+
+
+{{ if eq .Page.RelPermalink "/tags/" }}
+    
+    {{ "<!-- Page Title Section Start -->" | safeHTML }}
+    <section class="single-page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>{{ i18n "tags" }} und Kategorien</h2>
+                    <nav aria-label="breadcrumb mx-auto" role="navigation">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="{{ .Site.BaseURL | absURL }}"><i class="tf-ion-ios-home-outline"></i> &nbsp; Start</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">{{ i18n "tags" }}</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="blog section" id="tags">
+        <div class="container">
+            <div class="row col-md-12">
+    {{ $a := .Site.GetPage "/tags" }}
+    {{ range $a.Data.Terms.ByCount }}          
+    {{ "<!-- Blog Section Start -->" | safeHTML }}
+    
+            {{ "<!-- single blog post -->" | safeHTML }}
+                <div class="col-md-1"></div>
+                <article class="col-10 col-md-5 shadow mx-auto my-3" style="border-radius: 3px;">
+                    <div class="post-item ">
+                        <div class="post-title">
+                            <h3 class="mt-0">
+                                <a href="{{ .Page.RelPermalink  | absURL }}  "><i class="tf-pricetags"></i> &nbsp; {{ .Term }}</a>
+                            </h3>
+                        </div>
+                        <div class="post-meta">   
+                            <ul class="list-inline">
+                                <li class="list-inline-item">
+                                    <span>
+                                      {{ .Count }}  Eintr&auml;ge
+                                    </span>
+                                </li>
+                                <li class="list-inline-item">
+                                    <span> | Aktualisiert: {{ .Page.Date.Format "Jan 2, 2006" }} </span>
+                                </li>
+                                <li class="list-item">
+                                    <span>&nbsp;</span>
+                                </li>
+                            </ul>
+                            <ul class="list-inline" style="min-height: 80px;">
+                                {{ range .Pages | first 3}}
+                                <li class="list-item">
+                                    <a href="{{ .Permalink  | absURL }}  "><i class="tf-ion-ios-arrow-forward"></i> &nbsp;
+                                    {{ .Title }}</a>
+                                </li>
+                                {{ end }}
+                            </ul>
+                        </div>
+                        
+                        <div class="post-more">
+                            <div class="tag-lookup">
+                                <a href="{{ .Page.RelPermalink |absURL }}  "><i class="tf-ion-eye" style="font-size: 18px"></i> &nbsp; {{ i18n "show" }}</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </article>
+                {{ "<!-- /single blog post -->" | safeHTML }}
+                {{ end }}
+
+            </div>
+        </div>
+    </section>
+    {{ "<!-- Blog Section End -->" | safeHTML }}
+
+{{ else }}
+
+    {{ "<!-- Blog Section Start -->" | safeHTML }}
+    {{ "<!-- Page Title Section Start -->" | safeHTML }}
+    <section class="single-page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>{{ i18n "tags" }} - {{ .Title }}</h2>
+                    <nav aria-label="breadcrumb mx-auto" role="navigation">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="{{ .Site.BaseURL | absURL }}"><i class="tf-ion-ios-home-outline"></i> &nbsp; Start</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page"><a href="../">{{ i18n "tags" }}</a> <i class="tf-pricetags" style="font-size: 12px;"></i> &nbsp;{{ .Title }}</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="blog section" id="tagPosts">
+        <div class="container">
+            <div class="row col-12 ">
+                {{ range (.Paginator 6).Pages }}
+                {{ "<!-- single blog post -->" | safeHTML }}
+                <article class="col-md-4">
+                    <div class="post-item">
+                        <div class="post-thumb">
+                            <img class="img-fluid shadow rounded" src="{{ with .Params.image }}{{ . | absURL }}{{ end }}" alt="{{ .Title }}">
+                        </div>
+                        <div class="post-title">
+                            <h3 class="mt-0">
+                                <a href="{{ .Permalink | absURL }}">{{ .Title }}</a>
+                            </h3>
+                        </div>
+                        <div class="post-meta">
+                            <ul class="list-inline">
+                                <li class="list-inline-item">
+                                    <span>{{ .Date.Format .Site.Params.dateFormat }}</span>
+                                </li>
+                                <li class="list-inline-item">
+                                    <span> | Lesezeit ~ </span>
+                                    {{ .Page.ReadingTime }} Min.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="post-content">
+                            <p>{{ .Summary }}</p>
+                        </div>
+                        <div class="post-more">
+                          <a class="btn btn-main" href="{{ .Permalink | absURL }}">{{ i18n "readmore" }}</a>
+                        </div>
+                    </div>
+                </article>
+                {{ "<!-- /single blog post -->" | safeHTML }}
+                {{ end }}
+                <div class="col-12 text-center">
+                    {{ template "_internal/pagination.html" . }}
+                </div>
+            </div>
+        </div>
+    </section>
+    {{ "<!-- Blog Section End -->" | safeHTML }}
+
+    {{ end }}
+
+{{ end }}
+

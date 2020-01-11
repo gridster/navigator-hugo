@@ -21,18 +21,14 @@
                     <div class="post-meta">
                         <ul class="list-inline">
                             <li class="list-inline-item">
-                                <span>&copy; </span>
-                                {{ .Params.author }}
+                                <span>{{ .Date.Format .Site.Params.dateFormat }}</span>
                             </li>
                             <li class="list-inline-item">
                                 <span> | Lesezeit ~ </span>
                                 {{ .Page.ReadingTime }} Min.
                             </li>
 
-                            <li class="list-inline-item">
-                                <span> | </span>
-                                <span>{{ .Date.Format .Site.Params.dateFormat }}</span>
-                            </li>
+
                         </ul>
                     </div>
                     <div class="post-content">
