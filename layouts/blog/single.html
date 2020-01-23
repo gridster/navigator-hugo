@@ -1,4 +1,10 @@
-{{ define "main" }}
+<!DOCTYPE html>
+<html class="no-js" lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}de{{ end }}">
+    {{- partial "head3.html" . -}}
+    <body id="body">
+        {{ partial "preloader.html" . }}
+        {{- partial "header.html" . -}}
+        <div id="content">
 
 <section class="blog-single section">
     <div class="container">
@@ -118,4 +124,7 @@
 </section>
 {{ end }}
 
-{{ end }}
+</div>
+        {{- partial "footer.html" . -}}
+    </body>
+</html>
