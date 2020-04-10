@@ -1,0 +1,41 @@
+{{ if .Site.Params.hero.enable }}
+{{ "<!-- Hero Area -->" | safeHTML }}
+<section class="hero-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="video-player">
+                    <img class="img-fluid rounded" src="{{ with .Params.image }}{{.| absURL }}{{ end }}" alt="{{ .Params.title }}">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="block">
+                    {{ with .Params.heroteaser }}
+                        <h2>{{ . }}</h2>
+                    {{ end }}
+                    {{ with .Params.heropitch }}
+                        <p>{{ . }}</p>
+                    {{ end }}
+                    {{ if .Params.withpdf }}
+                        <ul class="list-inline wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".7s">
+                            <li class="list-inline-item text-center">
+                                <a href="{{ .Params.pdf  | absLangURL }}" target="_blank" class="btn btn-main">
+                                <i class="tf-ion-android-download"></i> Download Broschüre
+                                </a>
+                            </li>
+                        </ul>
+                    {{ else }}
+                        <ul class="list-inline wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".7s">
+                            <li class="list-inline-item text-center">
+                                <a href="mailto:support@conceptmonkey.de?subject=Anfrage%20{{ .Params.productname }} (vom {{ .Date.Format .Site.Params.dateFormat }} via productmonkey.de)" target="_self" class="btn btn-main">
+                                <i class="tf-ion-email"></i> Anfrage via E-Mail
+                                </a>
+                            </li>
+                        </ul>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}
