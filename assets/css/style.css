@@ -10,10 +10,10 @@ body {
 p {
   font-family: "Nunito", sans-serif;
   color: #9a9a9a;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 300;
-  text-align: justify;
-  text-align-last: left;
+  /*text-align: justify;
+  text-align-last: left;*/
 }
 
 strong {
@@ -23,7 +23,7 @@ strong {
 .unjustify {
   font-family: "Nunito", sans-serif;
   color: #9a9a9a;
-  font-size: 17px;
+  font-size: 16px;
   text-align: inherit;
   text-align-last: inherit;
 }
@@ -45,9 +45,9 @@ strong {
 .p-small {
   font-family: "Nunito", sans-serif;
   color: #9a9a9a;
-  font-size: 16px;
-  text-align: justify;
-  text-align-last: left;
+  font-size: 15px;
+  /*text-align: justify;
+  text-align-last: left;*/
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -420,8 +420,12 @@ a:focus, a:hover {
   .title p {
     width: 80%;
   }
-  p, li {
-    font-size: 13px !important;
+  p, li{
+    font-size: 14px;
+  }
+  .pricing-table .pricing-item li, 
+  .client-service-list li {
+    font-size: 14px !important;
   }
   ul {
     min-height: auto !important;
@@ -436,7 +440,7 @@ a:focus, a:hover {
   h4{
     font-size: 8px;
     font-weight: 600;
-    letter-spacing: 2.0px;
+    letter-spacing: 1.2px;
   }
   .title h2 {
     font-size: 1.1rem;
@@ -456,13 +460,20 @@ a:focus, a:hover {
   .slick-next{
     right: 5px !important;
   }
+  .post-item .post-meta{
+    font-size: 14px !important;
+  }
 }
 
 @media (max-width: 768px) {
   .title p {
     width: 80%;
   }
-  p, li {
+  p, li{
+    font-size: 15px  !important;
+  }
+  .pricing-table .pricing-item li, 
+  .client-service-list li {
     font-size: 15px;
   }
   h1,h2 {
@@ -497,10 +508,9 @@ a:focus, a:hover {
   .title p {
     width: 80%;
   }
-  p, li, 
   .pricing-table .pricing-item li, 
   .client-service-list li {
-    font-size: 13px !important;
+    font-size: 15px;
   }
   h1,h2 {
     font-size: 1.1rem;
@@ -527,12 +537,9 @@ a:focus, a:hover {
   .title p {
     width: 80%;
   }
-  p, li {
-    font-size: 15px;
-  }
   .pricing-table .pricing-item li, 
   .client-service-list li {
-    font-size: 15px;
+    font-size: 16px;
   }
   h1,h2 {
     font-size: 1.3em;
@@ -1540,7 +1547,7 @@ a:focus, a:hover {
 }
 
 .client-service-list li{
-  font-size: 20px;
+  font-size: 16px;
 }
 .client-service-list li i{
   margin-right: 10px;
