@@ -43,13 +43,13 @@
                      <div class="form-group row">
                         <label class="form-check-label ml-3">
                           <input class="form-check-input" name="optin" required type="checkbox">
-                          <p>&nbsp;Ich stimme der Verarbeitung meiner Daten zu.</p>
+                          <p class="smaller">&nbsp;Ich stimme der Datenverarbeitung und - Speicherung durch Sebastian Benderoth zu.</p>
                         </label>
                       </div>
                       <div class="form-group row">
                         <label class="form-check-label ml-3">
                           <input class="form-check-input" name="newsletter" type="checkbox">
-                          <p>&nbsp;Ich möchte in Zukunft gerne über Neuigkeiten informiert werden. / Newsletter bestellen.</p>
+                          <p class="smaller">&nbsp;Ich möchte in Zukunft gerne über Neuigkeiten via E-Mail informiert werden.</p>
                         </label>
                       </div>
 
@@ -69,14 +69,14 @@
                 <div class="address-block contact-meta-block">
                     <i class="tf-ion-android-pin"></i>
                     <h4>Adresse</h4>
-                    {{ with .Site.Params.contact.address }}<p>{{ . | safeHTML }}</p>{{ end }}
+                    {{ with .Site.Params.contact.address }}<p class="unjustify-center">{{ . | safeHTML }}</p>{{ end }}
                 </div>
             </div>
             <div class="col-12 col-md-3">
                 <div class="phone-block contact-meta-block">
                     <i class="tf-ion-ios-telephone"></i>
                     <h4>Telefon</h4>
-                    <p>
+                    <p class="unjustify-center">
                          {{ with .Site.Params.contact.phone }}Mobil: {{.}} {{ end }} 
                         <br> {{ with .Site.Params.contact.fax }} Fax: {{ . }} {{ end }}
                     </p>
@@ -86,7 +86,7 @@
                 <div class="phone-block contact-meta-block">
                     <i class="tf-ion-ios-email"></i>
                     <h4>Newsletter</h4>
-                    <p>
+                    <p class="unjustify-center">
                          Bleiben Sie auf dem Laufenden:
                         <br> <a href="https://share.hsforms.com/1Tlgi0CECQjaBIlwnA-ZUHQ4df8l" target="_blank">Updates abonnieren</a>
                     </p>

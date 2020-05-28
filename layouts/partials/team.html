@@ -19,7 +19,7 @@
             <div class="row justify-content-center">
                 {{ range .member }}
                     {{ "<!-- team member -->" | safeHTML }}
-                    <div class="col-12 col-md-6 col-sm-6">
+                    <div class="col-12 col-md-4 col-sm-6">
                         <div class="team-member text-center">
                             <div class="member-photo">
                                 <img class="img-fluid" src="{{.image | absURL }}" alt="team people">
@@ -28,7 +28,7 @@
                             <div class="member-content">
                                 <h3>{{ .name }}</h3>
                                 <span>{{ .designation }}</span>
-                                <p>{{ .description }}</p>
+                                <p class="unjustify-center">{{ .description }}</p>
                                 <ul class="list-inline">
                                     {{ with .facebookURL }}
                                     <li class="list-inline-item">

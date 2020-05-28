@@ -25,12 +25,12 @@
                         <div class="price-title bg-pricing">
                             {{ with .name }}<h6>{{.}}</h6>{{ end }}
                             {{ with .price }}<strong class="value">{{.}}</strong>{{ end }}
-                            {{ with .description }}<p>{{.}}</p>{{ end }}
+                            {{ with .description }}<p class="unjustify-center">{{.}}</p>{{ end }}
                         </div>
                         {{ "<!-- plan description -->" | safeHTML }}
-                        <ul>
+                        <ul class="text-left" style="padding-left: 10px;" >
                             {{ range .featurelist }}
-                            <li>{{.item}}</li>
+                            <li class="smaller">{{.item}}</li>
                             {{ end }}
                         </ul>
                         {{ "<!-- signup button -->" | safeHTML }}
