@@ -19,7 +19,8 @@
   <meta name=twitter:description content="{{ $description_plain }}">
 
 {{ "<!-- Mobile Specific Meta -->" | safeHTML }}
-<meta name=canonical content=http://www.productmonkey.de/ property=canonical>
+<link rel="canonical" href="https://www.productmonkey.de/{{ .Permalink }}" />
+<meta name=canonical content="https://www.productmonkey.de/{{ .Permalink }}" property=canonical>
 <meta property="og:locale" content="de">
 <meta property=og:site_name content=productMonkey.de>
 <meta property=og:type content=website>
@@ -42,7 +43,7 @@
 <link rel="apple-touch-icon" href="{{ "images/icons/apple-touch-icon.png" | relURL }}" />
 
 {{"<!-- Stylesheets -->" | safeHTML}}
-{{ "<!-- Themefisher Icon font -->" | safeHTML }}
+{{ "<!-- Icon font -->" | safeHTML }}
 <link rel="stylesheet" href="{{ "plugins/themefisher-font/style.css" | absURL }}">
 {{ "<!-- bootstrap.min css -->" | safeHTML}}
 <link rel="stylesheet" href="{{ "plugins/bootstrap/dist/css/bootstrap.min.css" | absURL }}">
