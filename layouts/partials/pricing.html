@@ -16,25 +16,30 @@
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-center">
+            <div class="row">
                 {{ range .item }}
                 {{ "<!-- single pricing table -->" | safeHTML }}
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="pricing-item">
+                <div class="col-lg-4 col-md-6 mb-3">
+                    <div class="pricing-item card h-100">
                         {{ "<!-- plan name & value -->" | safeHTML }}
-                        <div class="price-title bg-pricing">
+                    <div class="card-body">
+                        <div class="price-title card-header bg-pricing">
                             {{ with .name }}<h6>{{.}}</h6>{{ end }}
                             {{ with .price }}<strong class="value">{{.}}</strong>{{ end }}
                             {{ with .description }}<p class="unjustify-center">{{.}}</p>{{ end }}
                         </div>
                         {{ "<!-- plan description -->" | safeHTML }}
-                        <ul class="text-left" style="padding-left: 10px;" >
+                        <ul class="text-left unlist" >
                             {{ range .featurelist }}
-                            <li class="smaller">{{.item}}</li>
+                            <li class=" pl-3 smaller">{{.item}}</li>
                             {{ end }}
                         </ul>
-                        {{ "<!-- signup button -->" | safeHTML }}
-                        <a class="btn btn-main" href="{{.btnURL}}">{{.btnText}}</a>
+                        <div class="card-footer" style="background: #f9f9f9">
+                            {{ "<!-- signup button -->" | safeHTML }}
+                            <a class="btn btn-main" href="{{.btnURL}}">{{.btnText | safeHTML }}</a>
+                        </div>
+                    </div>
+                    
                     </div>
                 </div>
                 {{ end }}

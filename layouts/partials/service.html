@@ -9,19 +9,22 @@
                     <div class="title text-center">
                         {{ with .topTitle }}<h4>{{.}}</h4>{{ end }}
                         {{ with .title }}<h2>{{.}}</h2><span class="border"></span>{{ end }}
-                        {{ with .subtitle }}<p>{{.}}</p>{{ end }}
+                        {{ with .subtitle | markdownify }}<p>{{.}}</p>{{ end }}
                     </div>
                 </div>
             </div>
             <div class="row">
                 {{ range .item }}
-                <div class="col-md-4">
-                    <div class="block">
-                        {{ with .icon }}<i class="{{.}}"></i>{{ end }}
-                        {{ with .title }}<h3>{{.}}</h3>{{ end }}
-                        <ul>
+                <div class="col-md-4 ">
+                    <div class="block h-100">
+                        <h5>{{ with .icon }}<i class="{{.}}"></i>&nbsp;{{ end }}
+                        {{ with .title }}{{.}}{{ end }}</h5>
+                        <ul class="pt-3 unlist m-0">
                             {{ range .list }}
-                            <li>{{.name}}</li>
+                            <li>
+                                <i class="tf-ion-android-arrow-dropright" style="font-size:small;"></i>
+                                &nbsp;{{.name | markdownify}}
+                            </li>
                             {{ end }}
                         </ul>
                     </div>

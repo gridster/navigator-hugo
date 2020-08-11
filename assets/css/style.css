@@ -7,9 +7,41 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  color: #0a0309;
+  margin-bottom: .9rem;
+  color: inherit;
+  line-height: 1.4;
+  font-family: "Archive Narrow", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 10px 0 10px;
+}
+
+.h1, h1 {
+  font-size: 2.3rem;
+}
+
+.h2, h2 {
+  font-size: 1.8rem;
+}
+
+.h3, h3 {
+  font-size: 1.5rem;
+}
+
+.h4, h4 {
+  font-size: 1.4rem;
+}
+
+.h5, h5 {
+  font-size: 1.2rem;
+}
+
+
 p {
   font-family: "Nunito", sans-serif;
-  color: #9a9a9a;
+  color: #8b8b8b;
   font-size: 16px;
   font-weight: 300;
   /*text-align: justify;
@@ -22,7 +54,7 @@ strong {
 
 .unjustify {
   font-family: "Nunito", sans-serif;
-  color: #9a9a9a;
+  color: #8b8b8b;
   font-size: 16px;
   text-align: inherit;
   text-align-last: inherit;
@@ -44,17 +76,12 @@ strong {
 
 .p-small {
   font-family: "Nunito", sans-serif;
-  color: #9a9a9a;
+  color: #8b8b8b;
   font-size: 15px;
   /*text-align: justify;
   text-align-last: left;*/
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Archive Narrow", sans-serif;
-  font-weight: 700;
-  text-transform: uppercase;
-}
 
 /*=== MEDIA QUERY  #e91e63  ===*/
 .no-padding {
@@ -65,22 +92,39 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-block;
 }
 
-ol, ul {
+ol {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
+ul {
+  margin: 20px;
+  padding: 0;
+  list-style: square;
+  font-weight: 400;
+  font-family: "Nunito", sans-serif;
+  color: #8b8b8b;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: left;
+}
+
 .blog-list {
   margin-left: 20px;
   margin-bottom: 20px;
-  list-style: square !important;
+  list-style: square;
+}
+
+.unlist {
+  list-style: none !important;
 }
 
 .blog-list li {
   font-family: "Nunito", sans-serif;
-  color: #9a9a9a;
+  color: #8b8b8b;
   font-size: 16px;
+  line-height: 18px;
 }
 
 figure {
@@ -461,7 +505,7 @@ a:focus, a:hover {
     right: 5px !important;
   }
   .post-item .post-meta{
-    font-size: 14px !important;
+    font-size: 12px !important;
   }
 }
 
@@ -559,7 +603,7 @@ a:focus, a:hover {
     min-height: 380px;
   }
   .pricing-table .pricing-item ul {
-    min-height: 450px;
+    min-height: 150px;
   }
   .service-2 .service-item h4{
     font-size: 15px;
@@ -586,6 +630,10 @@ a:focus, a:hover {
 
 .shadow {
   box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.34);
+}
+
+.shadow-sm {
+  box-shadow: 3px 0px 20px 4px rgba(0, 0, 0, 0.24);
 }
 
 .gradient, .title .border, .service-2 .service-item i {
@@ -654,11 +702,6 @@ a:focus, a:hover {
 
 .commonTab .tab-content {
   padding-top: 30px;
-}
-
-.bg-pricing {
-  background: #000;
-  background-size: cover;
 }
 
 .single-page-header {
@@ -1269,10 +1312,24 @@ a:focus, a:hover {
 /*=================================================================
   Pricing section
 ==================================================================*/
+
+.bg-pricing {
+  background: #000;
+  background-size: cover;
+}
+
+#pricing .card-body {
+  padding: 0px;
+}
+
+#pricing .card-footer {
+  padding: 0px;
+}
+
 .pricing-table .pricing-item {
   margin-bottom: 15px;
   border-radius: 3px;
-  padding-bottom: 40px;
+  padding-bottom: 10px;
   text-align: center;
   background: #f9f9f9;
 }
@@ -1284,7 +1341,7 @@ a:focus, a:hover {
 
 .pricing-table .pricing-item ul {
   padding: 20px 0 10px;
-  min-height: 300px;
+  min-height: 100px;
 }
 
 .pricing-table .pricing-item li {
@@ -1304,6 +1361,7 @@ a:focus, a:hover {
   border-top-right-radius: 3px;
   border-top-left-radius: 3px;
   color: #fff;
+  min-height: 180px;
 }
 
 .pricing-table .price-title > h6 {
@@ -1776,6 +1834,7 @@ a:focus, a:hover {
 
 .post-item .post-thumb {
   margin-right: 10px;
+  min-height: 255px;
 }
 
 .post-item .post-thumb img {
@@ -1784,20 +1843,31 @@ a:focus, a:hover {
 
 .post-item .post-title {
   margin-top: 20px;
+  min-height: 60px;
 }
 
 .post-item .post-title h3 {
-  font-size: 15px;
+  font-size: 17px;
+  font-weight: 400;
+  font-stretch: condensed;
+  letter-spacing: 1px;
 }
 
 .post-item .post-title h3 a {
-  color: #000;
+  color: #222;
+
 }
 
 .post-item .post-meta {
-  font-size: 14px;
+  font-size: 12px !important;
   color: #888;
 }
+
+.post-item .post-meta ul {
+  font-size: 12px !important;
+  margin : 0px;
+}
+
 
 .post-item .post-meta a {
   color: #000;
@@ -1807,7 +1877,8 @@ a:focus, a:hover {
 .post-item .post-content p {
   color: #757575;
   margin: 10px 0;
-  /* min-height: 160px; */
+  min-height: 120px;
+
 }
 
 .post-item .btn-main, .post-item .btn-main-sm {
@@ -2224,7 +2295,7 @@ background-color: #FF6600
   color: #bdbdbd;
   font-weight: 300;
   letter-spacing: 1px;
-  text-transform: capitalize;
+  text-transform: uppercase;
   transition: color .3s;
   font-family: "Nunito", sans-serif;
   display: block;

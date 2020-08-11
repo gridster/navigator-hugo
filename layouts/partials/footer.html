@@ -9,7 +9,7 @@
                 </div>
                 <div class="col-sm-3 col-md-3 col-lg-3 mb-4">
                     <h3>{{ .Site.Params.footerServiceTitle }}</h3>
-                    <ul>
+                    <ul class="unlist text-uppercase m-0">
                         {{ range .Site.Menus.service }}
                         <li>
                             <a href="{{ .URL | absLangURL }}">{{ i18n .Name }}</a>
@@ -19,7 +19,7 @@
                 </div>
                 <div class="col-sm-3 col-md-3 col-lg-3 mb-4">
                     <h3>{{ .Site.Params.footerQuicklinkTitle }}</h3>
-                    <ul>
+                    <ul class="unlist text-uppercase m-0">
                         {{ range .Site.Menus.quicklink }}
                         <li>
                             <a href="{{ .URL | absLangURL }}">{{ i18n .Name }}</a>
@@ -32,15 +32,12 @@
                 </div>
                 <div class="col-sm-3 col-md-3 col-lg-3 mb-4">
                     <h3>{{ .Site.Params.footerMoreTitle }}</h3>
-                    <ul> 
+                    <ul class="unlist m-0"> 
                         <li>
                             <a href="https://www.conceptmonkey.de">conceptMonkey.de</a>
                         </li>
                          <li>
-                            <a href="https://webdesign.conceptmonkey.de">Tech Services | Web Development</a>
-                        </li>
-                        <li>
-                            <a href="https://www.sebastian-benderoth.de">Sebastian Benderoth</a>
+                            <a href="https://webdesign.conceptmonkey.de">Tech Services | Web Design</a>
                         </li>
                         <li>
                             <a href="https://www.bogi.work">BOGI - Battle Of Glorious Ideas</a>
