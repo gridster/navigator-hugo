@@ -24,11 +24,13 @@
 <meta property="og:locale" content="de">
 <meta property=og:site_name content="productMonkey.de - Blog">
 <meta property=og:type content=article>
-<meta property=og:url content="https://www.productmonkey.de/blog/{{ .Params.slug }}">
-<meta name=og:title content="productMonkey-Blog: {{ .Params.title }}" property=og:title>
+<meta property=og:url content=https://www.productmonkey.de{{ .Permalink }} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="627" />
+<meta name=og:title content="{{ .Params.title }}  :: via conceptMonkey Product & Innovation Blog" property=og:title>
 <meta name=og:description content="{{ $description_plain }}" property=og:description>
 <meta name=og:image content="https://www.productmonkey.de/{{ .Params.image }}" property=og:image>
-<meta name=twitter:title content="productMonkey-Blog: {{ .Params.title }}">
+<meta name=twitter:title content="{{ .Params.title }} :: via conceptMonkey Product & Innovation Blog">
 <meta name=twitter:card content=summary_large_image>
 <meta name=twitter:image content="https://www.productmonkey.de/{{ .Params.image }}">
 <meta name=author content="conceptMonkey | Sebastian Benderoth">
