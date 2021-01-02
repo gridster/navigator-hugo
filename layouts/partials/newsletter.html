@@ -1,0 +1,55 @@
+{{ if .Site.Params.contact.enable }}
+{{ "<!-- Start Contact Us -->" | safeHTML }}
+<section class="contact-us section bg-gray" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="title text-center">
+                    {{ with .Site.Params.newsletter.topTitle }}<h4>{{.}}</h4>{{ end }}
+                    {{ with .Site.Params.newsletter.title }}
+                    <h2>{{.}}</h2>
+                    <span class="border"></span>
+                    {{ end }}
+                    
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-lg-3">
+            
+            </div>
+            <div class="col-12 col-lg-6">
+                <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/shell.js"></script>
+            
+                <script>
+                hbspt.forms.create({
+                    portalId: "7344741",
+                    formId: "4e5822d0-2102-4236-8122-5c2703e6541d"
+                });
+                </script>
+            </div>
+            <div class="col-12 col-lg-3">
+            
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-12 col-lg-3">
+            
+            </div>
+            <div class="col-12 col-lg-6">
+                Sollte das Formular nicht angezeigt werden können, kann der Newsletter alternativ auch 
+                <a href="https://share.hsforms.com/1Tlgi0CECQjaBIlwnA-ZUHQ4df8l" target="_blank" alt="Newsletter - Alternativ hier abonnieren">hier</a> abonniert werden. 
+            </div>
+            <div class="col-12 col-lg-3">
+            
+            </div>
+
+        </div>
+
+
+        
+        
+    </div>
+</section>
+{{ end }}
