@@ -1,0 +1,15 @@
+{{ if .Site.Params.cta.enable }}
+{{ "<!-- Start Call To Action -->" | safeHTML }}
+<section class="call-to-action section" style='background-image: url("{{ .Site.Params.cta1.bg | absURL }}");'>
+    <div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				{{ with .Site.Params.cta1.title }}<h2>{{ . }}</h2>{{ end }}
+                {{ with .Site.Params.cta1.subtitle }}<p class="unjustify-center">{{ . | safeHTML }}</p>{{ end }}
+				{{ with .Site.Params.cta1.btnText }}<a href="{{ "newsletter" | absURL}}" class="btn btn-main" target="_self">{{ . }}</a>{{ end }}
+			</div>
+		</div>
+	</div>
+</section>
+{{ "<!-- Start Call To Action -->" | safeHTML }}
+{{ end }}
